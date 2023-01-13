@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from vendor import views
 
 urlpatterns = [
-    path('apptest0/',include('apptest0.urls')),#將 KuanWei.urls 下的所有 url 前面都冠上 apptest0/
-    path('admin/', admin.site.urls),
+# 後方的 name 可以先忽略，目前不會用到
+    path('', views.vendor_index, name="vendor_index"),
 ]
