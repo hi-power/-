@@ -15,3 +15,4 @@ class VendorForm(forms.ModelForm):
             'phone_number': _('電話'),
             'address': _('地址'),
         }
+

@@ -1,4 +1,5 @@
 from django.shortcuts import render#rendor可以將我們要傳達的資料一併打包，再透過 HttpResponse 回傳到瀏覽器
+#from django.views.decorators.csrf import csrf_protect
 from .models import Vendor
 from .forms import VendorForm # Day18要記得 import 相對應的 Model Form 唷!
 
@@ -13,7 +14,7 @@ def vendor_create_view(request):
     form = VendorForm(request.POST or None)
     if form.is_valid():
         form.save()
-        form = VerdorForm() # 清空 form
+        form = VendorForm() # 清空 form
 
     context = {
         'form' : form
