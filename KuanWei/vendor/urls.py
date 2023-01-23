@@ -19,6 +19,7 @@ from vendor import views
 
 urlpatterns = [
 # 後方的 name 可以先忽略，目前不會用到
+    path('<int:id>/', views.singleVendor, name='vendor'),
     path('', views.vendor_index, name="vendor_index"),
     path('create', views.vendor_create_view), # 新增
 ]
