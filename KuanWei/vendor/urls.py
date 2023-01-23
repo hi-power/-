@@ -14,12 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path
 from vendor import views
 
+app_name = 'vendors'
 urlpatterns = [
-# 後方的 name 可以先忽略，目前不會用到
-    path('<int:id>/', views.singleVendor, name='vendor'),
+    path('<int:id>/', views.singleVendor, name='vendor_id'),
     path('', views.vendor_index, name="vendor_index"),
-    path('create', views.vendor_create_view), # 新增
+    path('create', views.vendor_create_view,name="create"), # 新增
 ]

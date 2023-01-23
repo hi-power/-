@@ -3,6 +3,7 @@ from django.shortcuts import render#rendor可以將我們要傳達的資料一�
 from .models import Vendor
 from .forms import VendorForm # Day18要記得 import 相對應的 Model Form 唷!
 from django.http import Http404
+from django.urls import reverse # 新增
 
 # Create your views here.
 def vendor_index(request):#名稱對應urls.py urlpatterns中的path
@@ -30,3 +31,10 @@ def singleVendor(request, id):
     }
     return render(request, 'vendors/vendor_detail.html', context)
 
+
+
+def showtemplate(request):
+    vendor_list = Vendor.objects.all()
+    context = {'vendor_list': vendor_list}
+    # print(vendor_list)
+    return render(request, 'vendors/vendors_detail_all.html', context)

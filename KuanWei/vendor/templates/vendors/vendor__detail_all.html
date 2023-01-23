@@ -12,8 +12,7 @@
   <h1> 店家 : {{vlist.vendor_name}} </h1>
   <ul>
     <li>店名 : {{ vlist.store_name}}</li>
-    <li>電話 : {{ vlist.phone_number}}</li>
-    <li>地址 : {{ vlist.address}}</li>
+    <p> <a href="/vendor/{{vlist.id}}"> More detail...</a> </p>
   </ul>
 {% endfor %}
     {% endblock %}
